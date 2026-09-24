@@ -1,0 +1,26 @@
+.product-detail-gallery { min-width: 0; }
+.detail-main-image { position: relative; height: min(650px, 62vw); min-height: 430px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); border-radius: 32px; background: #10151c; isolation: isolate; }
+.detail-main-image::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(circle at 50% 30%, rgba(255,255,255,.22), transparent 35%), linear-gradient(145deg, rgba(109,244,255,.12), transparent 55%); }
+.detail-main-image::after { content: ""; position: absolute; bottom: -10%; left: 10%; right: 10%; height: 36%; border-radius: 50%; background: rgba(0,0,0,.62); filter: blur(35px); z-index: -1; }
+.detail-main-image img { position: relative; z-index: 1; height: 100%; width: 100%; object-fit: contain; padding: 18px; mix-blend-mode: normal; filter: saturate(.96) contrast(1.02); transition: transform .5s var(--ease-out); }
+.detail-main-image:hover img { transform: scale(1.045); }
+.detail-main-image.tone-violet { background: radial-gradient(circle at 80% 15%, rgba(145,117,255,.35), transparent 35%), #17122d; }
+.detail-main-image.tone-pink { background: radial-gradient(circle at 25% 15%, rgba(247,109,188,.31), transparent 38%), #271323; }
+.detail-main-image.tone-blue { background: radial-gradient(circle at 60% 10%, rgba(91,129,255,.38), transparent 40%), #111a32; }
+.detail-main-image.tone-orange { background: radial-gradient(circle at 70% 18%, rgba(255,175,77,.31), transparent 38%), #291b13; }
+.detail-main-image.tone-green { background: radial-gradient(circle at 30% 13%, rgba(86,232,157,.27), transparent 40%), #12261e; }
+.detail-image-glow { position: absolute; left: 50%; top: 48%; z-index: 0; height: 45%; width: 50%; transform: translate(-50%, -50%); border-radius: 50%; background: rgba(109,244,255,.16); filter: blur(70px); }
+.detail-badge { position: absolute; left: 22px; top: 22px; z-index: 3; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; background: rgba(7,12,17,.72); padding: 9px 12px; color: #cceeff; font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; backdrop-filter: blur(10px); }
+.detail-favorite { position: absolute; right: 22px; top: 22px; z-index: 3; display: grid; height: 44px; width: 44px; place-items: center; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; background: rgba(7,12,17,.72); color: rgba(255,255,255,.68); transition: all .2s var(--ease-out); backdrop-filter: blur(10px); }
+.detail-favorite:hover, .detail-favorite.is-favorite { border-color: rgba(255,127,201,.6); background: rgba(255,127,201,.14); color: #ff7fc9; }
+.detail-thumb { position: relative; height: 105px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; background: #10151c; opacity: .58; transition: all .2s var(--ease-out); }
+.detail-thumb img { height: 100%; width: 100%; object-fit: contain; padding: 5px; mix-blend-mode: normal; transition: transform .3s var(--ease-out); }
+.detail-thumb:hover { opacity: .9; border-color: rgba(109,244,255,.35); }
+.detail-thumb:hover img { transform: scale(1.07); }
+.detail-thumb.is-active { opacity: 1; border-color: #6df4ff; box-shadow: 0 0 0 2px rgba(109,244,255,.15); }
+.detail-thumb.tone-violet { background: #17122d; }.detail-thumb.tone-pink { background: #271323; }.detail-thumb.tone-blue { background: #111a32; }.detail-thumb.tone-orange { background: #291b13; }.detail-thumb.tone-green { background: #12261e; }
+.related-image { height: 180px; overflow: hidden; border-radius: 18px; background: #11151c; }
+.related-image img { height: 100%; width: 100%; object-fit: contain; padding: 10px; mix-blend-mode: normal; transition: transform .4s var(--ease-out); }
+.related-product:hover .related-image img { transform: scale(1.08); }
+.related-image.tone-violet { background: #17122d; }.related-image.tone-pink { background: #271323; }.related-image.tone-blue { background: #111a32; }.related-image.tone-orange { background: #291b13; }.related-image.tone-green { background: #12261e; }
+@media (max-width: 640px) { .detail-main-image { height: 105vw; min-height: 320px; max-height: 520px; border-radius: 25px; } .detail-thumb { height: 80px; border-radius: 14px; } .detail-badge { left: 15px; top: 15px; } .detail-favorite { right: 15px; top: 15px; } }
